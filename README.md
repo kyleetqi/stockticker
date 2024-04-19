@@ -6,9 +6,9 @@
 
 Qty | Item Description | Notes |
 --- | --- | --- |
-1 | DEVKIT DOIT V1.1 ESP32 | test |
-1 | ULN2003 IC | test | 
-1 | 28BYJ-48 Stepper Motor | test |
+1 | DEVKIT DOIT V1.1 ESP32 |  |
+1 | ULN2003 IC |  | 
+1 | 28BYJ-48 Stepper Motor |  |
 1 | SH1106 OLED Display | Some displays swap the position of VCC and GND. Verify the display pinout is compatible with PCB.|
 1 | Red LED |  |
 1 | Green LED |  |
