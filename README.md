@@ -1,17 +1,33 @@
 # Introduction
 
+# Bill of Material
+* I sourced all my parts from Sayal but feel free to source from wherever you'd like :)
+* Use your judgement when substituting parts ensuring compatability with the code and PCB. Modify the code and gerber as necessary
+
+Qty | Item Description | Notes |
+--- | --- | --- |
+1 | DEVKIT DOIT V1.1 ESP32 | test |
+1 | ULN2003 IC | test | 
+1 | 28BYJ-48 Stepper Motor | test |
+1 | SH1106 OLED Display | Some displays swap the position of VCC and GND. Verify the display pinout is compatible with PCB.|
+1 | Red LED |  |
+1 | Green LED |  |
+1 | 10 nF capacitor |  |
+2 | Resistor | Choose between 360Ω and 1k Ω to control LED brightness |
+1 | 6-pin USB-C jack |  |
+1 | Pointer |  |
+As Req. | M3 Mounting Hardware |  |
+
 # PCB
-<ul>
-	<li>The Gerber file includes the text "JLCJLCJLCJLC" to indicate where JLCPCB should print the PCB's ID. Change the text to "WayWayWay" if using PCBWay, or other text according to your manufacturer's information.</li>	
-</ul>
+
+* The Gerber file includes the text "JLCJLCJLCJLC" to indicate where JLCPCB should print the PCB's ID. Change the text to "WayWayWay" if using PCBWay, or other text according to your manufacturer's information.
 
 # Software
-<ul>
-	<li>Use the Arduino IDE to flash the program onto the ESP32.</li>
-	<li>Install the following libraries required to compile the code:</li>
-	<li>In order to fetch real stock market information, you will need to obtain an API key from finnhub.io</li>
-	<li>Change the network and API parameters at the top of the code as necessary such as the symbol, key, ssid, pass, etc. </li>
-</ul>
+
+* Use the Arduino IDE to flash the program onto the ESP32.
+* Install the following libraries required to compile the code:
+* In order to fetch real stock market information, you will need to obtain an API key from finnhub.io
+* Change the network and API parameters at the top of the code as necessary such as the symbol, key, ssid, pass, etc.
 
 # Soldering and Installation
 <ul>
