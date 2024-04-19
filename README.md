@@ -1,4 +1,5 @@
 # Introduction
+This project was inspired by Michael Klements' [ESP32 Stock Ticker]([url](https://www.the-diy-life.com/bitcoin-ticker-using-an-esp32-and-oled-display/))
 
 # Bill of Material
 * I sourced all my parts from Sayal but feel free to source from wherever you'd like :)
@@ -13,13 +14,13 @@ Qty | Item Description | Notes |
 1 | Red LED |  |
 1 | Green LED |  |
 1 | 10 nF capacitor |  |
-2 | Resistor | Choose between 360Ω and 1k Ω to control LED brightness |
+2 | Resistor | Choose between 360Ω and 1k Ω to control LED brightness. |
 1 | 6-pin USB-C jack |  |
-1 | Pointer |  |
-As Req. | M3 Mounting Hardware |  |
+1 | Pointer | 3D print using `pointer-rocket.stp`. |
+As Req. | M3 Mounting Hardware | Minimum two sets of screws/washers/nuts to mount the motor. |
 
 # PCB
-* The Gerber file includes the text "JLCJLCJLCJLC" to indicate where JLCPCB should print the PCB's ID. Change the text to "WayWayWay" if using PCBWay, or other text according to your manufacturer's information.
+* The Gerber file includes the text `JLCJLCJLCJLC` to indicate where JLCPCB should print the PCB's ID. Change the text to `WayWayWay` if using PCBWay, or other text according to your manufacturer's information.
 
 # Software
 * Connect your ESP32 to your computer and open up `stockticker.ino` using the Arduino IDE.
