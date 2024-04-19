@@ -12,6 +12,7 @@
 	<li>In order to fetch real stock market information, you will need to obtain an API key from finnhub.io</li>
 	<li>Change the network and API parameters at the top of the code as necessary such as the symbol, key, ssid, pass, etc. </li>
 </ul>
+
 # Soldering and Installation
 <ul>
 	<li>Test all components before soldering onto the PCB</li>
@@ -23,6 +24,7 @@
   	<li>Use M3 hardware to mount the PCB however you would like.</li>
    	<li>Install the pointer onto the shaft of the motor.</li>
 </ul>
+
 # Operation
 <ul>
 	<li>Plug and play. Use power supply that is rated at 5V and can supply at least 2A. A phone charging brick should be sufficient.</li>
