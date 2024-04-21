@@ -1,5 +1,5 @@
 # Introduction
-* This project was inspired by Michael Klements' [ESP32 Stock Ticker](https://www.the-diy-life.com/bitcoin-ticker-using-an-esp32-and-oled-display/) and [this Reddit post](https://www.reddit.com/r/wallstreetbets/comments/lfkprt/finished_my_diy_project_just_in_time_for_gme_to/?rdt=59493).
+* This project was inspired by Michael Klements' [ESP32 Stock Ticker](https://www.the-diy-life.com/bitcoin-ticker-using-an-esp32-and-oled-display/) and [this Reddit post.](https://www.reddit.com/r/wallstreetbets/comments/lfkprt/finished_my_diy_project_just_in_time_for_gme_to/?rdt=59493).
 * These files are for **PERSONAL USE** only. Please contact me if you wish to use these files commercially.
   
 # Bill of Materials
@@ -14,7 +14,7 @@ Qty | Item Description | Notes |
 1 | [SH1106 OLED Display](https://shop.sayal.com/products/1814-fa1?_pos=1&_sid=ff4679778&_ss=r) | Some displays swap the position of VCC and GND. Verify the display pinout is compatible with PCB.|
 1 | Red LED |  |
 1 | Green LED |  |
-1 | 10 nF capacitor |  |
+1 | 104 capacitor | 0.1 uF. |
 2 | Resistor | Choose between 360Ω and 1k Ω to control LED brightness. |
 1 | [6-pin USB-C jack](https://shop.sayal.com/products/amtc-1154?_pos=3&_sid=0e93b7e13&_ss=r) |  |
 1 | Pointer | 3D print using `pointer-rocket.stp`. |
@@ -39,7 +39,7 @@ Adafruit GFX Library | Adafruit |
 Adafruit SH110X | Adafruit | 
 ArduinoJson | Benoit Blanchon |
 
-* In order to fetch real stock market information, obtain a free API key from [finnhub.io](https://finnhub.io/)
+* In order to fetch real stock market information, obtain a free API key from [finnhub.io.](https://finnhub.io/)
 * Change the network and API parameters at the top of the code as necessary such as `symbol`, `key`, `ssid`, `pass`, etc.
 * Modify the `updateTime` variable to set how frequently the device updates price information.
 * Verify and upload the code onto the ESP32.
