@@ -42,6 +42,7 @@ ArduinoJson | Benoit Blanchon |
 * In order to fetch real stock market information, obtain a free API key from [finnhub.io.](https://finnhub.io/)
 * Change the network and API parameters at the top of the code as necessary such as `symbol`, `key`, `ssid`, `pass`, etc.
 * Modify the `updateTime` variable to set how frequently the device updates price information.
+* Modify the `motorResponse` variable to control how sensitive the pointer is to stock changes.
 * Verify and upload the code onto the ESP32.
 
 # Soldering and Installation
