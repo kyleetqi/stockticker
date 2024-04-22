@@ -59,8 +59,11 @@ ArduinoJson | Benoit Blanchon |
 * Plug and play. Use power supply that is rated at 5V and can supply at least 2A. A phone charging brick should be sufficient. **DO NOT USE MORE THAN ONE POWER SOURCE AT THE SAME TIME.**
 * Manually level the pointer to horizontal before powering the device since the motor does not have absolute positioning. The motor doesn’t remember its positioning between power ons.
 * If the ESP32 is unable to establish a connection to the internet or API, it will automatically enter demo mode and generate random data.
-* Known limitation: Although finnhub.io claims to provide live stock information, the API response may not be up to date at all times.
+* Although finnhub.io claims to provide live stock information, the API response may not be up to date at all times.
 
+# Known Limitations
+* Although finnhub.io claims to provide live stock information, the API response may not be up to date at all times.
+* Please contact me if you find any issues with the repository. :)
   
   
    
