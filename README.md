@@ -26,7 +26,7 @@ As Req. | M3 Mounting Hardware | Minimum two sets of screws/washers/nuts to moun
 # Software
 * Ensure you have the Arduino IDE installed.
 * If this is your first time flashing your ESP32, I recommend referencing a [comprehensive setup guide.](https://randomnerdtutorials.com/installing-the-esp32-board-in-arduino-ide-windows-instructions/)
-* Connect your ESP32 to your computer and open up `stockticker.ino` using the Arduino IDE.
+* Connect your ESP32 to your computer and open up `stockticker-public.ino` using the Arduino IDE.
 * Ensure you have selected `DOIT ESP32 DEVKIT V1` as your board, and the correct serial port for communication.
   * At this stage, you may want to test if you have successfully established a connection with your ESP32. Try running an example such as the one at `File` > `Examples` > `Wifi` > `WiFiScan`
   * When trying to upload code onto my ESP32. I kept getting the error: `Failed to establish serial connection.` To resolve this, open the serial monitor and hold the `BOOT` then `EN`(RESET) buttons down on your ESP32. You should see a response in the monitor at which point the code should be able to upload successfully. I hope this helps at least one person because I never found this solution online.
