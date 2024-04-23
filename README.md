@@ -14,7 +14,7 @@ Qty | Item Description | Notes |
 1 | [SH1106 OLED Display](https://shop.sayal.com/products/1814-fa1?_pos=1&_sid=ff4679778&_ss=r) | Some displays swap the position of VCC and GND. Verify the display pinout is compatible with PCB.|
 1 | Red LED |  |
 1 | Green LED |  |
-1 | 104 capacitor | 0.1 uF. |
+1 | 0.1 uF capacitor |  |
 2 | Resistor | Choose between 360Ω and 1k Ω to control LED brightness. |
 1 | [6-pin USB-C jack](https://shop.sayal.com/products/amtc-1154?_pos=3&_sid=0e93b7e13&_ss=r) |  |
 1 | Pointer | 3D print using `pointer-rocket.stp`. |
