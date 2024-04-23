@@ -18,7 +18,7 @@ Qty | Item Description | Notes |
 2 | Resistor | Choose between 360Ω and 1k Ω to control LED brightness. |
 1 | [6-pin USB-C jack](https://shop.sayal.com/products/amtc-1154?_pos=3&_sid=0e93b7e13&_ss=r) |  |
 1 | Pointer | 3D print using `pointer-rocket.stp`. |
-As Req. | M3 Mounting Hardware | Minimum two sets of screws/washers/nuts to mount the motor. |
+As Req. | M3 Mounting Hardware | Minimum two sets of screws/washers/nuts to mount the motor. #4 hardware is suitable as well. |
 
 # PCB
 * If you plan on ordering PCBs using the provided gerber file, I recommend specifying where the manufacturer prints their PCB ID#. Make sure to select the `specify ID location` option before checking out!
