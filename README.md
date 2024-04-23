@@ -21,7 +21,7 @@ Qty | Item Description | Notes |
 As Req. | M3 Mounting Hardware | Minimum two sets of screws/washers/nuts to mount the motor. |
 
 # PCB
-* If you plan on ordering PCBs using the provided gerber file, I recommend specifying where the manufacturer prints their PCB ID#. Make sure to select the specify ID location option when checking out!
+* If you plan on ordering PCBs using the provided gerber file, I recommend specifying where the manufacturer prints their PCB ID#. Make sure to select the `specify ID location` option before checking out!
   * If you are ordering from JLCPCB, you do not need to edit the gerber file.
   * If you are ordering from PCBWay, edit `JLCJLCJLCJLC` to `WayWayWay`.
   * If you are ordering from another manufacturer, follow their instructions accordingly.
