@@ -14,14 +14,17 @@ Qty | Item Description | Notes |
 1 | [SH1106 OLED Display](https://shop.sayal.com/products/1814-fa1?_pos=1&_sid=ff4679778&_ss=r) | Some displays swap the position of VCC and GND. Verify the display pinout is compatible with PCB.|
 1 | Red LED |  |
 1 | Green LED |  |
-1 | 0.1 uF capacitor |  |
+1 | 0.1 uF capacitor | 1 uF should be fine as well. |
 2 | Resistor | Choose between 360Ω and 1k Ω to control LED brightness. |
 1 | [6-pin USB-C jack](https://shop.sayal.com/products/amtc-1154?_pos=3&_sid=0e93b7e13&_ss=r) |  |
 1 | Pointer | 3D print using `pointer-rocket.stp`. |
 As Req. | M3 Mounting Hardware | Minimum two sets of screws/washers/nuts to mount the motor. |
 
 # PCB
-* The PCB design includes the text `JLCJLCJLCJLC` on the bottom silkscreen to indicate where JLCPCB should print the PCB's ID. Change the text to `WayWayWay` if using PCBWay, or other applicable text according to your manufacturer's instructions.
+* If you plan on ordering PCBs using the provided gerber file, I recommend specifying where the manufacturer prints their PCB ID#. Make sure to select the specify ID location option when checking out!
+  * If you are ordering from JLCPCB, you do not need to edit the gerber file.
+  * If you are ordering from PCBWay, edit `JLCJLCJLCJLC` to `WayWayWay`.
+  * If you are ordering from another manufacturer, follow their instructions accordingly.
 
 # Software
 * Ensure you have the Arduino IDE installed.
