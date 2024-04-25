@@ -16,10 +16,12 @@ Adafruit_SH1106G display = Adafruit_SH1106G(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, 
 bool isInverted = false;
 
 // Setting stepper motor parameters
+// The pinout order is kind of weird
+// I discovered a wiring mistake so this is to compensate
 #define IN1 19
-#define IN2 18
-#define IN3 5
-#define IN4 17
+#define IN2 17
+#define IN3 18
+#define IN4 5
 const int stepsPerRev = 2048;
 Stepper motor(stepsPerRev, IN1, IN3, IN2, IN4);
 int currentPos = 0;
