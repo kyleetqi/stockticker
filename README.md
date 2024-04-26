@@ -69,7 +69,7 @@ ArduinoJson | Benoit Blanchon |
 * Verify and upload the code onto the ESP32.
 
 # Soldering and Installation
-* Test all components before soldering onto the PCB.
+* Before soldering components onto the board, use the schematic to wire and test the system on a breadboard to ensure everything is working.
 * Verify that your cable can successfully plug into the USB-C port before soldering it into the board. See `Known Issues and Limitations` section.
 * Extract the ULN2003 IC from the driver board that comes with the motor and solder it directly onto the PCB before installing the motor.
 * Insulate the pins from the ULN2003 IC on the backside of the PCB and mount the motor to the back of the PCB using hardware so that the shaft protrudes through the 10mm hole in the PCB towards the front.
