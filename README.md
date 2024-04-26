@@ -26,9 +26,9 @@ Qty | Item Description | Notes |
 1 | 0.1 uF capacitor | 1 uF should be fine as well. |
 2 | Resistor | Choose between 360Ω and 1k Ω to control LED brightness. |
 1 | [6-pin USB-C jack](https://shop.sayal.com/products/amtc-1154?_pos=3&_sid=0e93b7e13&_ss=r) |  |
-1 | Pointer | **3D print using `pointer-rocket.stp`.** |
-2 | #4-40 x 1/4" Screw | M3 hardware is a suitable substitute. |
-2 | #4-40 Nut | M3 hardware is a suitable substitute. |
+1 | Pointer | 3D print using `pointer-rocket.stp`. If designing your own pointer, ensure the cylinder's inner diameter is 5mm. |
+2 | #4-40 x 1/4" Screw | Used to mount the motor. M3 hardware is a suitable substitute. |
+2 | #4-40 Nut | Used to mount the motor. M3 hardware is a suitable substitute. |
 
 ### Optional Items
 * The following items are used to mount the PCB to the acrylic stand I designed. If you decide to mount the PCB another way, choose your hardware accordingly.
@@ -72,12 +72,12 @@ ArduinoJson | Benoit Blanchon |
 * Test all components before soldering onto the PCB.
 * Verify that your cable can successfully plug into the USB-C port before soldering it into the board. See `Known Issues and Limitations` section.
 * Extract the ULN2003 IC from the driver board that comes with the motor and solder it directly onto the PCB before installing the motor.
-* Insulate the pins from the ULN2003 IC on the backside of the PCB and mount the motor to the back of the PCB using M3 hardware so that the shaft protrudes through the 10mm hole in the PCB towards the front.
+* Insulate the pins from the ULN2003 IC on the backside of the PCB and mount the motor to the back of the PCB using hardware so that the shaft protrudes through the 10mm hole in the PCB towards the front.
 * Cut the motor wires to length and solder them onto the back of the PCB making sure to pay attention to which color corresponds to which hole.
 * Turn the PCB back over to the front and insulate the solder from the motor connections. Afterwards, solder on the OLED display.
 * Solder all other components.
 * Install the pointer onto the shaft of the motor.
-* Use M3 hardware and the four corner holes on the PCB to mount the device.
+* Mount the device 
 
 # Operation
 * Plug and play. Use power supply that is rated at 5V and can supply at least 2A. A phone charging brick should be sufficient. **DO NOT USE MORE THAN ONE POWER SOURCE AT THE SAME TIME.**
