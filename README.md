@@ -4,9 +4,7 @@
 * Please read through all documentation before starting this project.
 * [Demo Video]()
 
-![alt text](./image.png)
-  
-
+![Stock ticker display mounted on a circuit board.](./images/final-design.png)
 
 # Known Issues and Limitations
 * Although finnhub.io claims to provide live stock information, the API response may not be up to date at all times.
@@ -34,6 +32,7 @@ Qty | Item Description | Notes |
 1 | Pointer | 3D print using `pointer-rocket.stp`. If designing your own pointer, ensure the cylinder's inner diameter is 5mm. |
 2 | #4-40 x 1/4" Screw | Used to mount the motor. M3 hardware is a suitable substitute. |
 2 | #4-40 Nut | Used to mount the motor. M3 hardware is a suitable substitute. |
+As Req. | Insulating tape | Electrical tape, foam tape, etc. |
 
 ### Optional Items
 * The following items are used to mount the PCB to the acrylic stand I designed. If you decide to mount the PCB another way, choose your hardware accordingly.
@@ -67,7 +66,7 @@ Adafruit GFX Library | Adafruit |
 Adafruit SH110X | Adafruit | 
 ArduinoJson | Benoit Blanchon |
 
-* In order to fetch real stock market information, obtain a free API key from [finnhub.io.](https://finnhub.io/)
+* To fetch real, live stock market information, obtain a free API key from [finnhub.io.](https://finnhub.io/)
 * Change the network and API parameters at the top of the code as necessary such as `symbol`, `key`, `ssid`, `pass`, etc.
 * Modify the `updateTime` variable to set how frequently the device updates price information.
 * Modify the `motorResponse` variable to control how sensitive the pointer is to stock changes.
@@ -76,13 +75,14 @@ ArduinoJson | Benoit Blanchon |
 # Soldering and Installation
 * Before soldering components onto the board, use the schematic to wire and test the system on a breadboard to ensure everything is working.
 * Verify that your cable can successfully plug into the USB-C port before soldering it into the board. See `Known Issues and Limitations` section.
-* Extract the ULN2003 IC from the driver board that comes with the motor and solder it directly onto the PCB before installing the motor.
-* Insulate the pins from the ULN2003 IC on the backside of the PCB and mount the motor to the back of the PCB using hardware so that the shaft protrudes through the 10mm hole in the PCB towards the front.
+* Extract the ULN2003 IC from the driver board that comes with the motor and solder it directly onto the front of the PCB **before** installing the motor.
+* [Insulate](./images/insulation-example.JPG) the ULN2003 pins on the backside of the PCB using the insulating tape.
+* Mount the motor to the back of the PCB using hardware so that the shaft protrudes through the 10mm hole in the PCB towards the front.
 * Cut the motor wires to length and solder them onto the back of the PCB making sure to pay attention to which color corresponds to which hole.
 * Turn the PCB back over to the front and insulate the solder from the motor connections. Afterwards, solder on the OLED display.
 * Solder all other components.
 * Install the pointer onto the shaft of the motor.
-* Mount the device 
+* Mount the device using the four corner holes on the PCB.
 
 # Operation
 * Plug and play. Use power supply that is rated at 5V and can supply at least 2A. A phone charging brick should be sufficient. **DO NOT USE MORE THAN ONE POWER SOURCE AT THE SAME TIME.**
