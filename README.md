@@ -2,17 +2,20 @@
 * This project was inspired by Michael Klements' [ESP32 Stock Ticker](https://www.the-diy-life.com/bitcoin-ticker-using-an-esp32-and-oled-display/) and [this Reddit post.](https://www.reddit.com/r/wallstreetbets/comments/lfkprt/finished_my_diy_project_just_in_time_for_gme_to/?rdt=59493).
 * These files are for **PERSONAL USE** only. Please contact me if you wish to use these files commercially.
 * Please read through all documentation before starting this project.
+* [Demo Video]()
+  
+
 
 # Known Issues and Limitations
 * Although finnhub.io claims to provide live stock information, the API response may not be up to date at all times.
 * Please contact me if you find any issues with the repository. :)
 * There are some known issues with the USB-C port. 
-  * Please check that your cable and brick can successfully supply power to the board. For some reason, the Apple charging brick will not work with the board. When I was testing my board with the Apple charger, no power was supplied and I thought it was because the cable was not plugged in all the way. Because of this, I unnecessarily filed the board down so the cable could plug in all the way.
-  * The USB-C port is located a bit far into the board. Because of this, it may be necessary to file down the side of the PCB to successfully plug in the cable. **PLEASE THOROUGHLY VERIFY IF THIS IS NECESSARY FOR YOU.**
+  * Please check that your cable and brick can successfully supply power to the board. For some reason, the Apple charging brick will not work with the board. When I was testing my board with the Apple charger, no power was supplied and I thought it was because the cable was not plugged in all the way. Because of this, I unnecessarily filed the board down so the cable could plug in properly.
+  * The USB-C port is located a bit far into the board. Because of this, it may be necessary to file down the side of the PCB to plug in the cable. **PLEASE THOROUGHLY VERIFY IF THIS IS NECESSARY FOR YOU.**
   
 # Bill of Materials
 * I sourced all my parts from Sayal but feel free to source from wherever you'd like.
-* Use your judgement when substituting parts ensuring compatability with the code and PCB. Modify the code and gerber as necessary.
+* Use your judgement when substituting parts ensuring compatibility with the code and PCB. Modify the code and gerber as necessary.
 
 ### Required Items
 Qty | Item Description | Notes |
