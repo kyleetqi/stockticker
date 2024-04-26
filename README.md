@@ -27,12 +27,18 @@ Qty | Item Description | Notes |
 2 | Resistor | Choose between 360Ω and 1k Ω to control LED brightness. |
 1 | [6-pin USB-C jack](https://shop.sayal.com/products/amtc-1154?_pos=3&_sid=0e93b7e13&_ss=r) |  |
 1 | Pointer | **3D print using `pointer-rocket.stp`.** |
+2 | #4-40 x 1/4" Screw | M3 hardware is a suitable substitute. |
+2 | #4-40 Nut | M3 hardware is a suitable substitute. |
 
 ### Optional Items
+* The following items are used to mount the PCB to the acrylic stand I designed. If you decide to mount the PCB another way, choose your hardware accordingly.
+
 Qty | Item Description | Notes |
 --- | --- | --- |
-As Req. | M3 Mounting Hardware | Minimum two sets of screws/washers/nuts to mount the motor. #4 hardware is suitable as well. |
-1 | Vinyl Decal / Sticker Paper | --- |
+1 | Acrylic Stand | Laser cut using `pcb-cover.dwg` |
+4 | [#4-40 x 12.7mm Standoff](https://shop.sayal.com/products/krc-164-2?_pos=8&_sid=6d0b828ae&_ss=r)| M3 hardware is a suitable substitute. |
+4 | #4-40 x 1/4" Screw | M3 hardware is a suitable substitute. |
+4 | #4-40 x 3/8" Screw | M3 hardware is a suitable substitute. |
 
 # PCB
 * If you plan on ordering PCBs using the provided gerber file, I recommend specifying where the manufacturer prints their PCB ID#. Make sure to select the `specify ID location` option before checking out!
