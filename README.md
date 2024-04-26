@@ -1,11 +1,20 @@
 # Introduction
 * This project was inspired by Michael Klements' [ESP32 Stock Ticker](https://www.the-diy-life.com/bitcoin-ticker-using-an-esp32-and-oled-display/) and [this Reddit post.](https://www.reddit.com/r/wallstreetbets/comments/lfkprt/finished_my_diy_project_just_in_time_for_gme_to/?rdt=59493).
 * These files are for **PERSONAL USE** only. Please contact me if you wish to use these files commercially.
+* Please read through all documentation before starting this project.
+
+# Known Issues and Limitations
+* Although finnhub.io claims to provide live stock information, the API response may not be up to date at all times.
+* Please contact me if you find any issues with the repository. :)
+* There are some known issues with the USB-C port. 
+  * Please check that your cable and brick can successfully supply power to the board. For some reason, the Apple charging brick will not work with the board. When I was testing my board with the Apple charger, no power was supplied and I thought it was because the cable was not plugged in all the way. Because of this, I unnecessarily filed the board down so the cable could plug in all the way.
+  * The USB-C port is located a bit far into the board. Because of this, it may be necessary to file down the side of the PCB to successfully plug in the cable. **PLEASE THOROUGHLY VERIFY IF THIS IS NECESSARY FOR YOU.**
   
 # Bill of Materials
 * I sourced all my parts from Sayal but feel free to source from wherever you'd like.
 * Use your judgement when substituting parts ensuring compatability with the code and PCB. Modify the code and gerber as necessary.
-  
+
+### Required Items
 Qty | Item Description | Notes |
 --- | --- | --- |
 1 | [DOIT ESP32 DEVKIT V1](https://shop.sayal.com/products/1815-ha1?_pos=1&_sid=3067e8a6e&_ss=r)  |  |
@@ -17,8 +26,13 @@ Qty | Item Description | Notes |
 1 | 0.1 uF capacitor | 1 uF should be fine as well. |
 2 | Resistor | Choose between 360Ω and 1k Ω to control LED brightness. |
 1 | [6-pin USB-C jack](https://shop.sayal.com/products/amtc-1154?_pos=3&_sid=0e93b7e13&_ss=r) |  |
-1 | Pointer | 3D print using `pointer-rocket.stp`. |
+1 | Pointer | **3D print using `pointer-rocket.stp`.** |
+
+### Optional Items
+Qty | Item Description | Notes |
+--- | --- | --- |
 As Req. | M3 Mounting Hardware | Minimum two sets of screws/washers/nuts to mount the motor. #4 hardware is suitable as well. |
+1 | Vinyl Decal / Sticker Paper | --- |
 
 # PCB
 * If you plan on ordering PCBs using the provided gerber file, I recommend specifying where the manufacturer prints their PCB ID#. Make sure to select the `specify ID location` option before checking out!
@@ -50,22 +64,19 @@ ArduinoJson | Benoit Blanchon |
 
 # Soldering and Installation
 * Test all components before soldering onto the PCB.
+* Verify that your cable can successfully plug into the USB-C port before soldering it into the board. See `Known Issues and Limitations` section.
 * Extract the ULN2003 IC from the driver board that comes with the motor and solder it directly onto the PCB before installing the motor.
 * Insulate the pins from the ULN2003 IC on the backside of the PCB and mount the motor to the back of the PCB using M3 hardware so that the shaft protrudes through the 10mm hole in the PCB towards the front.
 * Cut the motor wires to length and solder them onto the back of the PCB making sure to pay attention to which color corresponds to which hole.
 * Turn the PCB back over to the front and insulate the solder from the motor connections. Afterwards, solder on the OLED display.
 * Solder all other components.
 * Install the pointer onto the shaft of the motor.
-* Use M3 hardware and the four corner holes on the PCB to mount the device however you'd like.
+* Use M3 hardware and the four corner holes on the PCB to mount the device.
 
 # Operation
 * Plug and play. Use power supply that is rated at 5V and can supply at least 2A. A phone charging brick should be sufficient. **DO NOT USE MORE THAN ONE POWER SOURCE AT THE SAME TIME.**
 * Manually level the pointer to horizontal before powering the device since the motor does not have absolute positioning. The motor doesn’t remember its positioning between power ons.
 * If the ESP32 is unable to establish a connection to the internet or API, it will automatically enter demo mode and generate random data.
-
-# Known Limitations
-* Although finnhub.io claims to provide live stock information, the API response may not be up to date at all times.
-* Please contact me if you find any issues with the repository. :)
   
   
    
