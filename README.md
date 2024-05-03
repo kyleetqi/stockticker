@@ -10,7 +10,7 @@
 * Although finnhub.io claims to provide live stock information, the API response may not be up to date at all times.
 * Please contact me if you find any issues with the repository. :)
 * There are some known issues with the USB-C port. 
-  * Please check that your cable and brick can successfully supply power to the board. For some reason, the Apple charging brick will not work with the board. When I was testing my board with the Apple charger, no power was supplied and I thought it was because the cable was not plugged in all the way. Because of this, I unnecessarily filed the board down so the cable could plug in properly.
+  * Please check that your cable and brick can successfully supply power to the board. For some reason, the Apple charging brick will not work with the board.
   * The USB-C port is located a bit far into the board. Because of this, it may be necessary to file down the side of the PCB to plug in the cable. **PLEASE THOROUGHLY VERIFY IF THIS IS NECESSARY FOR YOU.**
   
 # Bill of Materials
