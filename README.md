@@ -2,9 +2,9 @@
 * This project was inspired by Michael Klements' [ESP32 Stock Ticker](https://www.the-diy-life.com/bitcoin-ticker-using-an-esp32-and-oled-display/) and [this Reddit post.](https://www.reddit.com/r/wallstreetbets/comments/lfkprt/finished_my_diy_project_just_in_time_for_gme_to/?rdt=59493)
 * These files are for **PERSONAL USE** only. Please contact me if you wish to use these files commercially.
 * Please read through all documentation before starting this project.
-* [Demo Video](https://www.youtube.com/watch?v=VmCBdoSknFs)
+* [Demo Video](https://youtu.be/1aN1ztKmoxc)
 
-![Stock ticker display mounted on a circuit board.](./images/IMG_5108.JPG)
+![Stock ticker display mounted on a circuit board.](./images/readme_photo.jpg)
 
 # Known Issues and Limitations
 * Although finnhub.io claims to provide live stock information, the API response may not be up to date at all times.
