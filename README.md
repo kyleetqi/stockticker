@@ -4,7 +4,7 @@
 * Please read through all documentation before starting this project.
 * [Demo Video](https://youtu.be/1aN1ztKmoxc)
 
-![Stock ticker display mounted on a circuit board.](./images/readme_photo.jpg)
+![Stock ticker display mounted on a circuit board.](./images/readme_photo.png)
 
 # Known Issues and Limitations
 * Although finnhub.io claims to provide live stock information, the API response may not be up to date at all times.
