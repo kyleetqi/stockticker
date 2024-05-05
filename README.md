@@ -10,7 +10,7 @@
 * Although finnhub.io claims to provide live stock information, the API response may not be up to date at all times.
 * Please contact me if you find any issues with the repository. :)
 * There are some known issues with the USB-C port. 
-  * Please check that your cable and brick can successfully supply power to the board. For some reason, the Apple charging brick will not work with the board.
+  * Please check that your cable and brick can successfully supply power to the board. I had issues with Apple products.
   * The USB-C port is located a bit far into the board. Because of this, it may be necessary to file down the side of the PCB to plug in the cable. **PLEASE THOROUGHLY VERIFY IF THIS IS NECESSARY FOR YOU.**
   
 # Bill of Materials
@@ -56,7 +56,7 @@ Qty | Item Description | Notes |
 * Connect your ESP32 to your computer and open up `stockticker-public.ino` using the Arduino IDE.
 * Ensure you have selected `DOIT ESP32 DEVKIT V1` as your board, and the correct serial port for communication.
   * At this stage, you may want to test if you have successfully established a connection with your ESP32. Try running an example such as the one at `File` > `Examples` > `Wifi` > `WiFiScan`
-  * When trying to upload code onto my ESP32. I kept getting the error: `Failed to establish serial connection.` To resolve this, open the serial monitor and hold the `BOOT` then `EN`(RESET) buttons down on your ESP32. You should see a response in the monitor at which point the code should be able to upload successfully. I hope this helps at least one person because I never found this solution online.
+  * When trying to upload code onto my ESP32. I kept getting the error: `Failed to establish serial connection.` To resolve this, open the serial monitor and hold the `BOOT` and then `EN`(RESET) buttons down on your ESP32. You should see a response in the monitor at which point the code should be able to upload successfully. I hope this helps at least one person because I never found this solution online.
 * Install the following libraries required to compile the code:
 
 Library Name | Author |
