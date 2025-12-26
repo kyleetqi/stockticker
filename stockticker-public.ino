@@ -1,4 +1,4 @@
-//Including necessary libraries
+// Including necessary libraries
 #include <WiFi.h>
 #include <HTTPClient.h>
 #include <ArduinoJson.h>
@@ -15,7 +15,7 @@
 Adafruit_SH1106G display = Adafruit_SH1106G(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 bool isInverted = false;
 
-// Setting stepper motor parameters
+// Declare stepper motor parameters
 // The pinout order is kind of weird
 // I discovered a wiring mistake so this is to compensate
 #define IN1 19
@@ -26,13 +26,14 @@ const int stepsPerRev = 2048;
 Stepper motor(stepsPerRev, IN1, IN3, IN2, IN4);
 int currentPos = 0;
 const int motorSpeed = 5;
+
 // Controls how sensitive the motor is to stock changes.
 // I recommend a value between 100 and 200.
 // Pointer points vertically when % change equals 512/response.
 // Ex: when response = 100, pointer becomes vertical at 512/100 = 5.12%.
 const int motorResponse = 150;
 
-// Setting LED parameters;
+// Declare LED parameters
 const int pinRed = 4;
 const int pinGreen = 16;
 
@@ -50,8 +51,7 @@ const String symbol = "yourSymbol";
 // but for practical purposes every few minutes is probably better
 const int updateTime = 10000;
 
-void setup() 
-{
+void setup(){
   Serial.begin(115200);
   setupLED();
   setupDisplay();
@@ -59,15 +59,12 @@ void setup()
   setupWiFi();
 }
 
-void loop() 
-{
+void loop(){
   float differenceInPrice = 0.0;
-  if (isOffline == true)
-  {
+  if (isOffline == true){
     differenceInPrice = demoMode();
   }
-  else
-  {
+  else{
     differenceInPrice = checkPrice();
   }
   changeLED(differenceInPrice);
@@ -76,8 +73,7 @@ void loop()
 }
 
 // LED setup
-void setupLED()
-{
+void setupLED(){
   pinMode(pinRed, OUTPUT);
   pinMode(pinGreen, OUTPUT);
   digitalWrite(pinGreen, LOW);
@@ -85,23 +81,19 @@ void setupLED()
 }
 
 // Changes LED colour
-void changeLED(float diff)
-{
-  if(diff >= 0)
-  {
+void changeLED(float diff){
+  if(diff >= 0){
     digitalWrite(pinGreen, HIGH);
     digitalWrite(pinRed, LOW);
   }
-  else
-  {
+  else{
     digitalWrite(pinRed, HIGH);
     digitalWrite(pinGreen, LOW);
   }
 }
 
-// Setup the display
-void setupDisplay()
-{
+// Display setuo
+void setupDisplay(){
   delay(250);
   display.setTextColor(SH110X_WHITE);
   display.begin(i2c_Address, true);
@@ -112,8 +104,7 @@ void setupDisplay()
 }
 
 // Displays text on LCD
-void displayText(int col, int row, String text, int size)
-{
+void displayText(int col, int row, String text, int size){
   display.setTextSize(size);
   display.setCursor(col, row);
   display.println(text);
@@ -121,8 +112,7 @@ void displayText(int col, int row, String text, int size)
 }
 
 // Displays stock information
-void displayPrice(float current, float previous, float change)
-{
+void displayPrice(float current, float previous, float change){
   display.clearDisplay();
   String currentText = "$" + String(current);
   String previousText = "Prev: $" + String(previous);
@@ -134,10 +124,8 @@ void displayPrice(float current, float previous, float change)
 }
 
 // Inverts the display
-void invertDisplay()
-{
-  if (isInverted == false)
-  {
+void invertDisplay(){
+  if (isInverted == false){
     display.invertDisplay(true);
     isInverted = true;
     return;
@@ -147,11 +135,8 @@ void invertDisplay()
   return;
 }
 
-// I copied this function from:
-// https://github.com/AndrewBudziszek/bitcoin-ticker-esp32
-// Centers text on the OLED
-void printCenter(const String buf, int x, int y, int size)                          
-{
+// Center text on the OLED
+void printCenter(const String buf, int x, int y, int size){
   int16_t x1, y1;
   uint16_t w, h;
   display.setTextSize(size);
@@ -163,8 +148,7 @@ void printCenter(const String buf, int x, int y, int size)
 
 // Fetches stock info
 // and returns differenceInPrice for the motor and LED
-float checkPrice()
-{
+float checkPrice(){
   HTTPClient http;
   int httpCode;
   http.begin("https://finnhub.io/api/v1/quote?symbol=" + symbol + "&token=" + key);
@@ -172,8 +156,7 @@ float checkPrice()
 
   float differenceInPrice = 0;
 
-  if(httpCode > 0)
-  {
+  if(httpCode > 0){
     DynamicJsonDocument doc(1024);
     String payload = http.getString();
     // Serial.println(payload);
@@ -181,8 +164,7 @@ float checkPrice()
 
     float previousClosePrice = doc["pc"];
     float currentPrice = doc["c"];
-    if (currentPrice == 0)
-    {
+    if (currentPrice == 0){
       display.clearDisplay();
       displayText(0, 0, "No Available Info!", 1);
       displayText(0, 8, "Entering Demo Mode.", 1);
@@ -194,8 +176,7 @@ float checkPrice()
     differenceInPrice = ((currentPrice-previousClosePrice)/previousClosePrice)*100.0;
     displayPrice(currentPrice, previousClosePrice, differenceInPrice);
   } 
-  else
-  {
+  else{
     display.clearDisplay();
     displayText(0, 0, "HTTP Req. Error!", 1);
     displayText(0, 8, "Entering Demo Mode.", 1);
@@ -206,41 +187,35 @@ float checkPrice()
 }
 
 // Set up WiFi
-void setupWiFi()
-{
+void setupWiFi(){
   WiFi.mode(WIFI_STA);
   WiFi.disconnect();
   WiFi.begin(ssid, pass);
   displayText(0, 0, "Connecting to WiFi", 1);
   delay(1000);
   int i = 0;
-  while (WiFi.status() != WL_CONNECTED)
-  {
+  while (WiFi.status() != WL_CONNECTED){
     displayText(2*i, 10, ".", 1);
     i++;
     delay(1000);
-    if (i == 10)
-    {
+    if (i == 10){
       isOffline = true;
       break;
     }
   } 
   display.clearDisplay();
-  if (isOffline == false)
-  {
+  if (isOffline == false){
     displayText(0, 0, "Connection Success!", 1);
   }
-  else
-  {
+  else{
     displayText(0, 0, "Connection Failed!", 1);
     displayText(0, 8, "Entering Demo Mode.", 1);
   }
   delay(3000);
 }
 
-// Motor setup
-void setupMotor()
-{
+// Setup motor
+void setupMotor(){
   motor.setSpeed(motorSpeed);
   digitalWrite(IN1, LOW);
   digitalWrite(IN2, LOW);
@@ -251,10 +226,8 @@ void setupMotor()
 // Sets the motor output pins to high low
 // Function used to conserve power
 // 1 -> on, 0 -> off
-void motorPower(bool onoff)
-{
-  if (onoff == true)
-  {
+void motorPower(bool onoff){
+  if (onoff == true){
     digitalWrite(IN1, HIGH);
     digitalWrite(IN2, HIGH);
     digitalWrite(IN3, HIGH);
@@ -270,8 +243,7 @@ void motorPower(bool onoff)
 
 // Positions the motor based on % change
 // Returns # of steps to track relative position
-int driveMotor(float diff)
-{
+int driveMotor(float diff){
   motorPower(true);
   invertDisplay();
   int targetPos = round(diff*motorResponse);
@@ -290,8 +262,7 @@ int driveMotor(float diff)
 }
 
 // Generating information if API is unreachable
-float demoMode()
-{
+float demoMode(){
   float randomDiff = random(-256, 256);
   randomDiff = randomDiff/100.0;
   displayPrice(randomDiff + 100.00, 100.00, randomDiff);
