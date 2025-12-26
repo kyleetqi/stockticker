@@ -12,9 +12,10 @@
 * There are some known issues with the USB-C port. 
   * Please check that your cable and brick can successfully supply power to the board. I had issues with Apple products.
   * The USB-C port is located a bit far into the board. Because of this, it may be necessary to file down the side of the PCB to plug in the cable. **PLEASE THOROUGHLY VERIFY IF THIS IS NECESSARY FOR YOU.**
+* Because this project uses a stepper without absolute encoding, the ticker has no memory of the motor position between power ons. The pointer position needs to be reset before each power on.
   
 # Bill of Materials
-* I sourced all my parts from Sayal but feel free to source from wherever you'd like.
+* I sourced all my parts from Sayal, (a hobbyist electronics store), but feel free to source from wherever you'd like.
 * Use your judgement when substituting parts ensuring compatibility with the code and PCB. Modify the code and gerber as necessary.
 
 ### Required Items
@@ -22,7 +23,7 @@ Qty | Item Description | Notes |
 --- | --- | --- |
 1 | [DOIT ESP32 DEVKIT V1](https://shop.sayal.com/products/1815-ha1?_pos=1&_sid=3067e8a6e&_ss=r)  |  |
 1 | [ULN2003 IC](https://shop.sayal.com/products/1814-lc1?_pos=3&_sid=53d498842&_ss=r) | The IC and motor come as a set if ordering from Sayal. | 
-1 | [28BYJ-48 Stepper Motor](https://shop.sayal.com/products/1814-lc1?_pos=3&_sid=53d498842&_ss=r) | See above. |
+1 | [28BYJ-48 Stepper Motor](https://shop.sayal.com/products/1814-lc1?_pos=3&_sid=53d498842&_ss=r) | See note above. |
 1 | [SH1106 OLED Display](https://shop.sayal.com/products/1814-fa1?_pos=1&_sid=ff4679778&_ss=r) | Some displays swap the position of VCC and GND. Verify the display pinout is compatible with PCB.|
 1 | Red LED |  |
 1 | Green LED |  |
@@ -32,7 +33,7 @@ Qty | Item Description | Notes |
 1 | Pointer | 3D print using `pointer-rocket.stp`. If designing your own pointer, ensure the cylinder's inner diameter is 5mm. |
 2 | #4-40 x 1/4" Screw | Used to mount the motor. M3 hardware is a suitable substitute. |
 2 | #4-40 Nut | Used to mount the motor. M3 hardware is a suitable substitute. |
-As Req. | Insulating tape | Electrical tape, foam tape, etc. |
+As Req. | Insulating tape | Electrical tape, etc. |
 
 ### Optional Items
 * The following items are used to mount the PCB to the acrylic stand I designed. If you decide to mount the PCB another way, choose your hardware accordingly.
@@ -52,11 +53,12 @@ Qty | Item Description | Notes |
 
 # Software
 * Ensure you have the Arduino IDE installed.
+  * You may also use the PlatformIO extension on VSCode at your own discretion. 
 * If this is your first time flashing your ESP32, I recommend referencing a [comprehensive setup guide.](https://randomnerdtutorials.com/installing-the-esp32-board-in-arduino-ide-windows-instructions/)
 * Connect your ESP32 to your computer and open up `stockticker-public.ino` using the Arduino IDE.
 * Ensure you have selected `DOIT ESP32 DEVKIT V1` as your board, and the correct serial port for communication.
   * At this stage, you may want to test if you have successfully established a connection with your ESP32. Try running an example such as the one at `File` > `Examples` > `Wifi` > `WiFiScan`
-  * When trying to upload code onto my ESP32. I kept getting the error: `Failed to establish serial connection.` To resolve this, open the serial monitor and hold the `BOOT` and then `EN`(RESET) buttons down on your ESP32. You should see a response in the monitor at which point the code should be able to upload successfully. I hope this helps at least one person because I never found this solution online.
+  * When trying to upload code onto your ESP32, you may encounter the error: `Failed to establish serial connection.` To resolve this, open the **serial monitor** and hold the `BOOT` and then `EN`(RESET) buttons down on your ESP32. You should see a response in the monitor at which point the code should be able to upload successfully.
 * Install the following libraries required to compile the code:
 
 Library Name | Author |
@@ -74,7 +76,7 @@ ArduinoJson | Benoit Blanchon |
 
 # Soldering and Installation
 * Before soldering components onto the board, use the schematic to wire and test the system on a breadboard to ensure everything is working.
-* Verify that your cable can successfully plug into the USB-C port before soldering it into the board. See `Known Issues and Limitations` section.
+* Verify that your cable can successfully plug into the USB-C port before soldering it into the board. See the `Known Issues and Limitations` section.
 * Extract the ULN2003 IC from the driver board that comes with the motor and solder it directly onto the front of the PCB **before** installing the motor.
 * [Insulate](./images/insulation-example.JPG) the ULN2003 pins on the backside of the PCB using the insulating tape.
 * Mount the motor to the back of the PCB using hardware so that the shaft protrudes through the 10mm hole in the PCB towards the front.
@@ -82,11 +84,11 @@ ArduinoJson | Benoit Blanchon |
 * Turn the PCB back over to the front and insulate the solder from the motor connections. Afterwards, solder on the OLED display.
 * Solder all other components.
 * Install the pointer onto the shaft of the motor.
-* Mount the device using the four corner holes on the PCB.
+* Mount the device using the fastener holes on the PCB.
 
 # Operation
 * Plug and play. Use power supply that is rated at 5V and can supply at least 2A. A phone charging brick should be sufficient. **DO NOT USE MORE THAN ONE POWER SOURCE AT THE SAME TIME.**
-* Manually level the pointer to horizontal before powering the device since the motor does not have absolute positioning. The motor doesn’t remember its positioning between power ons.
+* Manually level the pointer to horizontal before powering the device since the motor does not have absolute encoding. The motor doesn’t remember its position between power ons.
 * If the ESP32 is unable to establish a connection to the internet or API, it will automatically enter demo mode and generate random data.
   
   
